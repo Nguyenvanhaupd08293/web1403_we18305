@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai1</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt("Nhập số nguyên a:"));
+        let b = parseInt(prompt("Nhập số nguyên b:"));
+        let c = parseInt(prompt("Nhập số nguyên c:"));
+        let delta = b * b - 4 * a * c;
+        if(delta <0){
+            document.write("phuong trinh vo nghiem");
+        }else if(delta==0){S
+           let x1=-b/(2*a);
+            document.write("Phuong trinh co nghiem kep x=" +x1);
+        }else{ 
+            let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            document.write("Phương trình có 2 nghiệm phân biệt:");
+            document.write("x1 = " + x1);
+            document.write("x2 = " + x2);
+        }
+    </script>
+</body>
+</html>

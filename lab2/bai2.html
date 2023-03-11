@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt("Nhập a:"));
+        let b = parseInt(prompt("Nhập b:"));
+        let c = parseInt(prompt("Nhập c:"));
+        if (a + b > c && a + c > b && b + c > a) {
+        if (a === b && b === c) {
+        document.write("Đây là một tam giác đều");
+  } else if (a === b || b === c || c === a) {
+        document.write("Đây là một tam giác cân");
+  } else if (a*a + b*b === c*c || a*a + c*c === b*b || b*b + c*c === a*a) { 
+        document.write("Đây là một tam giác vuông");
+  } else { 
+        document.write("Đây là một tam giác thường");
+  }
+  } else {
+       document.write("Ba cạnh a, b, c không tạo thành một tam giác");
+  }
+    </script>
+</body>
+</html>
