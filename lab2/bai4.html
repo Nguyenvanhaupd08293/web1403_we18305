@@ -8,8 +8,21 @@
 </head>
 <body>
     <script>
-        var a = 1;
-        
+   
+  let daysOfWeek = ["Tue", "Thu", "Sat", "Nine"];
+    daysOfWeek.push("Mon", "We", "Fri", "Sun");
+    daysOfWeek.sort(function(a, b) {
+  let order = { "Mon": 1, "Tue": 2, "Wed": 3, "Thu": 4, "Fri": 5, "Sat": 6, "Sun": 7 };
+  let aIndex = order[a] || Number.MAX_VALUE;
+  let bIndex = order[b] || Number.MAX_VALUE;
+
+  return aIndex - bIndex;
+});
+  let index = daysOfWeek.indexOf("Nine");
+if (index !== -1) {
+     daysOfWeek.splice(index, 1);
+}
+    document.write(daysOfWeek); 
     </script>
 </body>
 </html>
