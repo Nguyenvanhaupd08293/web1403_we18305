@@ -7,22 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-   
-  let daysOfWeek = ["Tue", "Thu", "Sat", "Nine"];
-    daysOfWeek.push("Mon", "We", "Fri", "Sun");
-    daysOfWeek.sort(function(a, b) {
-  let order = { "Mon": 1, "Tue": 2, "Wed": 3, "Thu": 4, "Fri": 5, "Sat": 6, "Sun": 7 };
-  let aIndex = order[a] || Number.MAX_VALUE;
-  let bIndex = order[b] || Number.MAX_VALUE;
-
-  return aIndex - bIndex;
-});
-  let index = daysOfWeek.indexOf("Nine");
-if (index !== -1) {
-     daysOfWeek.splice(index, 1);
-}
-    document.write(daysOfWeek); 
+    <script>   
+  let week = ["Tue", "Thu", "Sat", "Nine"];
+  week.splice(3, 1);
+//Thêm phần tử vào mảng với hàm array.splice()
+week.splice(0, 0, "Mon"); //Thêm phần tử "Mon" vào index 0
+week.splice(2, 0, "Wed"); //Thêm phần tử "Wed" vào index 2
+week.splice(5, 0, "Fri"); //Thêm phần tử "Fri" vào index 5
+week.splice(6, 0, "Sun"); //Thêm phần tử "Sun" vào index 6
+//Loại bỏ phần tử không hợp lệ với hàm array.splice()
+document.write(week); //["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     </script>
 </body>
 </html>
