@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <script >
-let fullName = prompt("Nhập vào họ và tên của bạn:");
-let gender = prompt("Nhập vào giới tính của bạn (Nam hoặc Nữ):");
-let arrName = fullName.split(" ");
-let ho = arrName[0];
-let tenDem = "";
-let ten = "";
-if(arrName.length > 2){
-  tenDem = arrName.slice(1, arrName.length - 1).join(" ");
-  ten = arrName[arrName.length - 1];
-} else {
-  tenDem = arrName[1];
-  ten = arrName[2];
-}
-document.write("Họ: ", ho);
-document.write("Tên đệm: ", tenDem);
-document.write("Tên: ", ten);
-let tenMoi = "";
-if(gender.toLowerCase() === "nam"){
-  tenMoi = "Văn " + ten;
-} else if(gender.toLowerCase() === "nữ"){
-  tenMoi = "Vẽ " + ten;
-}
-document.write("Tên mới: ", ho + " " + tenMoi);
+    <script>
+        let fullName = prompt("Nhập vào họ và tên của bạn:");
+        let gender = prompt("Nhập vào giới tính của bạn (Nam hoặc Nữ):");
+        let arrName = fullName.split(" ");
+        let ho = arrName[0];
+        let tenDem = "";
+        let ten = "";
+        if (arrName.length > 2) {
+            tenDem = arrName.slice(1, arrName.length - 1).join(" ");
+            ten = arrName[arrName.length - 1];
+        } else {
+            tenDem = arrName[1];
+            ten = arrName[2];
+        }
+        document.write("Họ: ", ho);
+        document.write("Tên đệm: ", tenDem);
+        document.write("Tên: ", ten);
+        let tenMoi = "";
+        if (gender.toLowerCase() === "nam") {
+            tenMoi = "Văn " + ten;
+        } else if (gender.toLowerCase() === "nữ") {
+            tenMoi = "Vẽ " + ten;
+        }
+        document.write("Tên mới: ", ho + " " + tenMoi);
     </script>
 </body>
+
 </html>
