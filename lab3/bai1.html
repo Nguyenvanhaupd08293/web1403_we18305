@@ -11,24 +11,24 @@
 <body>
     <script>
         function calculateDTB() {
-            let toán = parseFloat(prompt("Nhập điểm môn Toán:"));
-            let lý = parseFloat(prompt("Nhập điểm môn Lý:"));
-            let hóa = parseFloat(prompt("Nhập điểm môn Hóa:"));
-            let sinh = parseFloat(prompt("Nhập điểm môn Sinh:"));
+            let Math = parseFloat(prompt("Nhập điểm môn Math:"));
+            let physical = parseFloat(prompt("Nhập điểm môn physical:"));
+            let chemistry = parseFloat(prompt("Nhập điểm môn chemistry:"));
+            let biology = parseFloat(prompt("Nhập điểm môn biology:"));
 
             // Kiểm tra điều kiện
-            if (isNaN(toán) || isNaN(lý) || isNaN(hóa) || isNaN(sinh)) {
+            if (isNaN(Math) || isNaN(physical) || isNaN(chemistry) || isNaN(biology)) {
                 document.write("Vui lòng nhập số");
                 return;
             }
 
             // Kiểm tra điểm từ 0 - 10
-            if (toán < 0 || toán > 10 || lý < 0 || lý > 10 || hóa < 0 || hóa > 10 || sinh < 0 || sinh > 10) {
+            if (Math < 0 || Math > 10 || physical < 0 || physical > 10 || chemistry < 0 || chemistry > 10 || biology < 0 || biology > 10) {
                 document.write("Điểm phải 0 đến 10!");
                 return;
             }
 
-            let DTB = (toán + lý + hóa + sinh) / 4;
+            let DTB = (Math + physical + chemistry + biology) / 4;
             document.write(`Điểm trung bình của bạn là ${DTB}`);
 
             // Xuất ra kết quả xếp loại
@@ -45,24 +45,24 @@
 
 
         function calculateDTBSwitch() {
-            let toán = parseFloat(prompt("Nhập điểm môn Toán:"));
-            let lý = parseFloat(prompt("Nhập điểm môn Lý:"));
-            let hóa = parseFloat(prompt("Nhập điểm môn Hóa:"));
-            let sinh = parseFloat(prompt("Nhập điểm môn Sinh:"));
+            let Math = parseFloat(prompt("Nhập điểm môn Math:"));
+            let physical = parseFloat(prompt("Nhập điểm môn physical:"));
+            let chemistry = parseFloat(prompt("Nhập điểm môn chemistry:"));
+            let biology = parseFloat(prompt("Nhập điểm môn biology:"));
 
             // Kiểm tra điều kiện
-            if (isNaN(toán) || isNaN(lý) || isNaN(hóa) || isNaN(sinh)) {
+            if (isNaN(Math) || isNaN(physical) || isNaN(chemistry) || isNaN(biology)) {
                 document.write("Vui lòng nhập số");
                 return;
             }
 
             // Kiểm tra điểm từ 0 - 10
-            if (toán < 0 || toán > 10 || lý < 0 || lý > 10 || hóa < 0 || hóa > 10 || sinh < 0 || sinh > 10) {
+            if (Math < 0 || Math > 10 || physical < 0 || physical > 10 || chemistry < 0 || chemistry > 10 || biology < 0 || biology > 10) {
                 document.write("Điểm phải nằm trong khoảng từ 0 đến 10!");
                 return;
             }
 
-            let DTB = (toán + lý + hóa + sinh) / 4;
+            let DTB = (Math + physical + chemistry + biology) / 4;
             document.write(`Điểm trung bình của bạn là ${DTB}`);
 
             // Xuất ra kết quả xếp loại
