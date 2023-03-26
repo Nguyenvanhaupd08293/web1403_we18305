@@ -6,33 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="bai2.css">
+    <script src="bai2.js"></script>
 </head>
 
 <body>
-    <form>
-        <center>
-            <input type="text" id="result" name="result" placeholder="0" readonly>
-            <br>
-            <input type="button" value="1" onclick="document.getElementById('result').value+='1'">
-            <input type="button" value="2" onclick="document.getElementById('result').value+='2'">
-            <input type="button" value="3" onclick="document.getElementById('result').value+='3'">
-            <input type="button" value="+" onclick="document.getElementById('result').value+='+'">
-            <br>
-            <input type="button" value="4" onclick="document.getElementById('result').value+='4'">
-            <input type="button" value="5" onclick="document.getElementById('result').value+='5'">
-            <input type="button" value="6" onclick="document.getElementById('result').value+='6'">
-            <input type="button" value="-" onclick="document.getElementById('result').value+='-'">
-            <br>
-            <input type="button" value="7" onclick="document.getElementById('result').value+='7'">
-            <input type="button" value="8" onclick="document.getElementById('result').value+='8'">
-            <input type="button" value="9" onclick="document.getElementById('result').value+='9'">
-            <input type="button" value="*" onclick="document.getElementById('result').value+='*'">
-            <br>
-            <input type="button" value="C" onclick="document.getElementById('result').value=''">
-            <input type="button" value="0" onclick="document.getElementById('result').value+='0'">
-            <input type="button" value="=" onclick="document.getElementById('result').value=eval(document.getElementById('result').value)">
-            <input type="button" value="/" onclick="document.getElementById('result').value+='/'"></center>
-    </form>
+    <div class="container">
+        <div class="title">Máy tính </div>
+        <div class="results">
+            <input type="text" id="resultInput" class="result">
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="buttonHandler(this)">7</button>
+            <button class="button" onclick="buttonHandler(this)">8</button>
+            <button class="button" onclick="buttonHandler(this)">9</button>
+            <button class="button" onclick="buttonHandler(this)">+</button >
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="buttonHandler(this)">4</button>
+            <button class="button" onclick="buttonHandler(this)">5</button>
+            <button class="button" onclick="buttonHandler(this)">6</button>
+            <button class="button" onclick="buttonHandler(this)">-</button>
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="buttonHandler(this)">1</button >
+            <button class="button" onclick="buttonHandler(this)">2</button >
+            <button class="button" onclick="buttonHandler(this)">3</button >
+            <button class="button" onclick="buttonHandler(this)">*</button>
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="buttonHandler(this)">0</button>
+            <button class="button" onclick="buttonHandler(this)">AC</button>
+            <button class="button" onclick="buttonHandler(this)">=</button >
+            <button class="button" onclick="buttonHandler(this)">/</button>
+        </div>
+    </div>
+    </div>
+
 </body>
 
 </html>

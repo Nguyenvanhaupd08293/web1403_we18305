@@ -6,102 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="bai1.js"></script>
 </head>
 
 <body>
     <script>
-        function calculateDTB() {
-            let Math = parseFloat(prompt("Nhập điểm môn Math:"));
-            let physical = parseFloat(prompt("Nhập điểm môn physical:"));
-            let chemistry = parseFloat(prompt("Nhập điểm môn chemistry:"));
-            let biology = parseFloat(prompt("Nhập điểm môn biology:"));
+        let choice;
+        do {
+            choice = parseInt(
+                prompt(
+                    "Nhap lua chon:\n1. Tinh diem trung binh (switch case)\n2. Tinh diem trung binh (if else)\n0. Thoat"
+                )
+            );
 
-            // Kiểm tra điều kiện
-            if (isNaN(Math) || isNaN(physical) || isNaN(chemistry) || isNaN(biology)) {
-                document.write("Vui lòng nhập số");
-                return;
-            }
-
-            // Kiểm tra điểm từ 0 - 10
-            if (Math < 0 || Math > 10 || physical < 0 || physical > 10 || chemistry < 0 || chemistry > 10 || biology < 0 || biology > 10) {
-                document.write("Điểm phải 0 đến 10!");
-                return;
-            }
-
-            let DTB = (Math + physical + chemistry + biology) / 4;
-            document.write(`Điểm trung bình của bạn là ${DTB}`);
-
-            // Xuất ra kết quả xếp loại
-            if (DTB >= 10 && DTB >= 9) {
-                document.write("Xếp loại: Giỏi");
-            } else if (9 > DTB && DTB >= 7) {
-                document.write("Xếp loại: Khá");
-            } else if (DTB <= 7 && DTB >= 5) {
-                document.write("Xếp loại: Trung Bình");
-            } else {
-                document.write("Xếp loại: Yếu");
-            }
-        }
-
-
-        function calculateDTBSwitch() {
-            let Math = parseFloat(prompt("Nhập điểm môn Math:"));
-            let physical = parseFloat(prompt("Nhập điểm môn physical:"));
-            let chemistry = parseFloat(prompt("Nhập điểm môn chemistry:"));
-            let biology = parseFloat(prompt("Nhập điểm môn biology:"));
-
-            // Kiểm tra điều kiện
-            if (isNaN(Math) || isNaN(physical) || isNaN(chemistry) || isNaN(biology)) {
-                document.write("Vui lòng nhập số");
-                return;
-            }
-
-            // Kiểm tra điểm từ 0 - 10
-            if (Math < 0 || Math > 10 || physical < 0 || physical > 10 || chemistry < 0 || chemistry > 10 || biology < 0 || biology > 10) {
-                document.write("Điểm phải nằm trong khoảng từ 0 đến 10!");
-                return;
-            }
-
-            let DTB = (Math + physical + chemistry + biology) / 4;
-            document.write(`Điểm trung bình của bạn là ${DTB}`);
-
-            // Xuất ra kết quả xếp loại
-            switch (true) {
-                case DTB >= 10 && DTB >= 9:
-                    document.write("Xếp loại: Giỏi");
+            switch (choice) {
+                case 1:
+                    tinhDiemTrungBinhSwitch();
                     break;
-                case DTB < 9 && DTB >= 7:
-                    document.write("Xếp loại: Khá");
+                case 2:
+                    tinhDiemTrungBinhIfElse();
                     break;
-                case DTB < 7 && DTB >= 5:
-                    document.write("Xếp loại: Trung Bình");
+                case 0:
+                    alert("Tam biet!");
                     break;
                 default:
-                    document.write("Xếp loại: Yếu");
+                    alert("Lua chon khong hop le!");
                     break;
             }
-        }
-
-        function main() {
-            while (true) {
-                let chọn = parseInt(prompt("Chọn 1 trong các lựa chọn sau:\n1. Tính điểm trung bình (sử dụng if else)\n2. Tính điểm trung bình (sử dụng switch case)\n0. Thoát"));
-                switch (chọn) {
-                    case 1:
-                        calculateDTB();
-                        break;
-                    case 2:
-                        calculateDTBSwitch();
-                        break;
-                    case 0:
-                        return;
-                    default:
-                        document.write("Lựa chọn không hợp lệ!");
-                        break;
-                }
-            }
-        }
-
-        main();
+        } while (choice != 0);
     </script>
 </body>
 
