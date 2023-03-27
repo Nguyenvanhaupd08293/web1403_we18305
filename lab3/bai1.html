@@ -11,29 +11,98 @@
 
 <body>
     <script>
-        let choice;
-        do {
-            choice = parseInt(
-                prompt(
-                    "Nhap lua chon:\n1. Tinh diem trung binh (switch case)\n2. Tinh diem trung binh (if else)\n0. Thoat"
-                )
-            );
+        function calculateDTB() {
+            let Math = parseFloat(prompt("Nhập điểm môn Toán:"));
+            let Physics = parseFloat(prompt("Nhập điểm môn Lý:"));
+            let Chemistry = parseFloat(prompt("Nhập điểm môn Hóa:"));
+            let Biology = parseFloat(prompt("Nhập điểm môn Sinh:"));
 
-            switch (choice) {
-                case 1:
-                    tinhDiemTrungBinhSwitch();
+            // Kiểm tra điều kiện
+            if (isNaN(Math) || isNaN(Physics) || isNaN(chemistry) || isNaN(Biology)) {
+                document.write("Vui lòng nhập số");
+                return;
+            }
+
+            // Kiểm tra điểm từ 0 - 10
+            if (Math < 0 || Math > 10 || Physics < 0 || Physics > 10 || Chemistry < 0 || Chemistry > 10 || Biology < 0 || Biology > 10) {
+                document.write("Điểm phải 0 đến 10!");
+                return;
+            }
+
+            let DTB = (Math + Physics + Chemistry + Biology) / 4;
+            document.write(`Điểm trung bình của bạn là ${DTB}`);
+
+            // Xuất ra kết quả xếp loại
+            if (DTB >= 10 && DTB >= 9) {
+                document.write("Xếp loại: Giỏi");
+            } else if (9 > DTB && DTB >= 7) {
+                document.write("Xếp loại: Khá");
+            } else if (DTB <= 7 && DTB >= 5) {
+                document.write("Xếp loại: Trung Bình");
+            } else {
+                document.write("Xếp loại: Yếu");
+            }
+        }
+
+
+        function calculateDTBSwitch() {
+            let Math = parseFloat(prompt("Nhập điểm môn Math:"));
+            let Physics = parseFloat(prompt("Nhập điểm môn Physics:"));
+            let Chemistry = parseFloat(prompt("Nhập điểm môn Chemistry:"));
+            let Biology = parseFloat(prompt("Nhập điểm môn Biology:"));
+
+            // Kiểm tra điều kiện
+            if (isNaN(Math) || isNaN(Physics) || isNaN(chemistry) || isNaN(Biology)) {
+                document.write("Vui lòng nhập số");
+                return;
+            }
+
+            // Kiểm tra điểm từ 0 - 10
+            if (Math < 0 || Math > 10 || Physics < 0 || Physics > 10 || Chemistry < 0 || Chemistry > 10 || Biology < 0 || Biology > 10) {
+                document.write("Điểm phải nằm trong khoảng từ 0 đến 10!");
+                return;
+            }
+
+            let DTB = (Math + Physics + Chemistry + Biology) / 4;
+            document.write(`Điểm trung bình của bạn là ${DTB}`);
+
+            // Xuất ra kết quả xếp loại
+            switch (true) {
+                case DTB >= 10 && DTB >= 9:
+                    document.write("Xếp loại: Giỏi");
                     break;
-                case 2:
-                    tinhDiemTrungBinhIfElse();
+                case DTB < 9 && DTB >= 7:
+                    document.write("Xếp loại: Khá");
                     break;
-                case 0:
-                    alert("Tam biet!");
+                case DTB < 7 && DTB >= 5:
+                    document.write("Xếp loại: Trung Bình");
                     break;
                 default:
-                    alert("Lua chon khong hop le!");
+                    document.write("Xếp loại: Yếu");
                     break;
             }
-        } while (choice != 0);
+        }
+
+        function main() {
+            while (true) {
+                let chọn = parseInt(prompt("Chọn 1 trong các lựa chọn sau:\n1. Tính điểm trung bình (sử dụng if else)\n2. Tính điểm trung bình (sử dụng switch case)\n0. Thoát"));
+                switch (chọn) {
+                    case 1:
+                        calculateDTB();
+                        break;
+                    case 2:
+                        calculateDTBSwitch();
+                        break;
+                    case 0:
+                        return;
+                    default:
+                        document.write("Lựa chọn không hợp lệ!");
+                        break;
+                }
+            }
+        }
+
+        main();
     </script>
 </body>
 
