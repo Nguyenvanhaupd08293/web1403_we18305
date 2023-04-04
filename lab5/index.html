@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .todo-list-wrapper {
+            margin: 150px auto;
+            max-width: 500px;
+            padding: 30px 60px;
+            border: 1px solid black;
+            background-color: aqua;
+        }
+        
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .group-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .group-form input,
+        .group-form textarea {
+            margin: 10px 0;
+            padding: 10px 8px;
+            resize: none;
+        }
+        
+        .group-form label {
+            text-transform: capitalize;
+        }
+        
+        .btn {
+            padding: 8px 14px;
+            color: #5a5a5a;
+            border: 1px solid #929292;
+            cursor: pointer;
+            text-transform: capitalize;
+            border-radius: 3px;
+        }
+        
+        .btn-add {
+            align-self: flex-end;
+        }
+        
+        .task-list-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h2 {
+            text-align: center;
+            text-transform: capitalize;
+            color: #5a5a5a;
+        }
+        
+        .task-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #5a5a5a;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="todo-list-wrapper">
+        <h1>Todo list</h1>
+        <form action="">
+            <div class="group-form">
+                <label for="">tên task</label>
+                <input type="text" class="name-task-input" id="name1412" />
+            </div>
+
+            <div class="group-form">
+                <label for="">mô tả</label>
+                <textarea type="text" rows="7" class="des-input" id="mota11"></textarea>
+            </div>
+            <button type="button" class="btn btn-add" onclick="kiemTra()">
+          add
+        </button>
+        </form>
+        <div class="task-list-wrapper">
+            <h2>Danh sách task</h2>
+            <div class="task-list-item">
+                <span id="task-id">#1</span>
+                <span id="name-task">Task 1</span>
+                <span id="des-task">Mô tả task 1</span>
+                <button class="btn btn-detele">Delete</button>
+                <button class="btn btn-edit">Edit</button>
+            </div>
+            <div class="task-list-item">
+                <span id="task-id">#2</span>
+                <span id="name-task">Task 1</span>
+                <span id="des-task">Mô tả task 1</span>
+                <button class="btn btn-detele">Delete</button>
+                <button class="btn btn-edit">Edit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var mang = [];
+
+        function kiemTra() {
+            let nametask = document.getElementById("name1412").value;
+            let motatask = document.getElementById("mota11").value;
+
+            if (nametask.length > 1 && motatask.length > 2) {
+                alert("tao task thanh cong");
+
+                let newtassk = {
+                    name: nametask,
+                    description: motatask,
+                };
+                mang.push(newtassk);
+                console.log(mang);
+
+                hi3();
+                document.getElementById("name1412").value = "";
+                document.getElementById("mota11").value = "";
+            } else {
+                alert("nhap lai di troi oi ");
+            }
+        }
+
+        function hi3() {
+            let task_1 = "";
+            mang.map(function(item, index) {
+                console.log(item);
+                task_1 += `<div class="task-list-item">
+        <span id="task-id">${index + 1}</span>
+        <input id="name-task" value="${item.name}" disabled />
+        <input id="des-task" value="${item.description}" disabled />
+        <button class="btn btn-detele">Delete</button>
+        <button class="btn btn-edit" id="btnEdit">Edit</button>
+    </div>`;
+            });
+
+            document.querySelector(".task-list-wrapper").innerHTML = task_1;
+
+            const btnEdits = document.querySelectorAll(".btn-edit");
+            btnEdits.forEach((btnEdit) => {
+                btnEdit.addEventListener("click", () => {
+                    const name = btnEdit.parentElement.querySelector("#name-task");
+                    const description =
+                        btnEdit.parentElement.querySelector("#des-task");
+
+                    name.disabled = !name.disabled;
+                    description.disabled = !description.disabled;
+                    btnEdit.innerHTML = name.disabled ? "Edit" : "Update";
+                });
+            });
+
+            const btnDeletes = document.querySelectorAll(".btn-detele");
+            btnDeletes.forEach((btnDelete, index) => {
+                btnDelete.addEventListener("click", () => {
+                    mang.splice(index, 1);
+                    hi3();
+                });
+            });
+        }
+    </script>
+
+    Regenerate response
+</body>
+
+</html>

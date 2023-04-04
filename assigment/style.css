@@ -1,0 +1,109 @@
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .header {
+        overflow: hidden;
+        background-color: #1f983f;
+        width: 100%;
+        height: 50px;
+    }
+    
+    .header marquee {
+        font-size: 30px;
+        padding: 10px 15px;
+        color: #fff;
+        text-shadow: 2px 2px 5px red;
+    }
+    
+    .partners {
+        overflow: hidden;
+        background-color: #981f61;
+        width: 100%;
+    }
+    
+    .partners a {
+        float: left;
+        display: block;
+        color: rgb(238, 230, 230);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        width: 100px;
+    }
+    
+    .partners a:hover {
+        background-color: #1be8d4;
+        color: rgb(219, 20, 20);
+    }
+    
+    .partners .search-container {
+        float: right;
+    }
+    
+    .partners input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: 1px solid #ccc;
+    }
+    
+    .partners .search-container button {
+        float: right;
+        padding: 6px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 17px;
+        cursor: pointer;
+        border: 1px solid #0a0101;
+    }
+    
+    .partners .search-container button:hover {
+        background: #c7ca07;
+        border: 1px solid #0a0101;
+    }
+    
+    article {
+        width: 100%;
+        height: 500px;
+        background-color: rgb(251, 243, 243);
+    }
+    
+    .column {
+        width: 25%;
+    }
+    
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+    }
+    
+    @media (min-width: 1200px) {
+        .content {
+            margin-left: calc(50% - 600px);
+        }
+        .sanPham {
+            border-radius: 10px;
+            box-shadow: 0px 0px 8px gray;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+        }
+        .sanPham .Name {
+            font-size: larger;
+            font-variant: small-caps;
+            color: blue;
+        }
+        .sanPham .gia {
+            color: red;
+            font-weight: bold;
+            font-size: large;
+        }
+        .sanPham .gia del {
+            color: gray;
+        }
+    }
