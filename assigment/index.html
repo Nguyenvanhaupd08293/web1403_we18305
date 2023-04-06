@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 
 <body>
@@ -33,78 +34,91 @@
         <a href="#contact">Ưu đãi</a>
     </div>
     <article>
-        <div class="content">
-            <div class="column">
-                <div class="sanPham">
-                    <div class="Name">
-                        Iphone 14 Pro Max 512GB - New
-                    </div>
-                    <img src="images/a4.jpg" alt="iphone 14 Pro Max" width="200" height="150">
-                    <div class="gia">
-                        <del>39.490.000đ</del> 25.500.000đ
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="sanPham">
-                    <div class="Name">
-                        Iphone 14 Pro Max 512GB - New
-                    </div>
-                    <img src="images/a4.jpg" alt="iphone 14 Pro Max" width="200" height="150">
-                    <div class="gia">
-                        <del>39.490.000đ</del> 25.500.000đ
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="sanPham">
-                    <div class="Name">
-                        Iphone 14 Pro Max 512GB - New
-                    </div>
-                    <img src="images/a4.jpg" alt="iphone 14 Pro Max" width="200" height="150">
-                    <div class="gia">
-                        <del>39.490.000đ</del> 25.500.000đ
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="sanPham">
-                    <div class="Name">
-                        Iphone 14 Pro Max 512GB - New
-                    </div>
-                    <img src="images/a4.jpg" alt="iphone 14 Pro Max" width="200" height="150">
-                    <div class="gia">
-                        <del>39.490.000đ</del> 25.500.000đ
-                    </div>
-                </div>
-            </div>
+        <script>
+            //  khai báo một mảng `arr_hinh` chứa các đường dẫn tới các file ảnh, và một mảng `arr_mota` chứa các mô tả tương ứng với từng ảnh trong `arr_hinh`.
+            var arr_hinh = [
+                "images/anh0.png",
+                "images/anh1.jpg",
+                "images/anh2.jpg",
+                "images/anh3.png"
+            ];
+            var arr_mota = [
+                "Mô tả thời trang",
+                "Khám phá du lịch",
+                "Giải trí",
+                "Bóng đá"
+            ];
+            var arr_trang = [
+                "1/4",
+                "2/4",
+                "3/4",
+                "4/4"
+            ];
+            var arr_item = [
+                "one",
+                "two",
+                "three",
+                "four"
+            ];
+        </script>
+        <div id="slider">
+            <b id="sotrang">1/4</b>
+            <img src="images/anh0.png" id="hinh">
+            <b id="mota">Mô tả thời trang </b>
+            <i class="fas fa-chevron-left" onclick="prev()"></i>
+            <i class="fas fa-chevron-right" onclick="next()"></i>
+        </div>
+        <div class="abc">
+            <ul>
+                <li><i class="fas fa-user-secret" id="one" onclick="chuyen(0)"></i></li>
+                <li><i class="fas fa-user-secret" id="two" onclick="chuyen(1)"></i></li>
+                <li><i class="fas fa-user-secret" id="three" onclick="chuyen(2)"></i></li>
+                <li><i class="fas fa-user-secret" id="four" onclick="chuyen(3)"></i></li>
+            </ul>
+        </div>
+        <script>
+            var index = 0;
 
+            function prev() {
+                index--;
+                if (index == -1) {
+                    index = arr_hinh.length - 1;
+                }
+                document.getElementById("hinh").src = arr_hinh[index];
+                document.getElementById("mota").innerHTML = arr_mota[index];
+                document.getElementById("sotrang").innerHTML = arr_trang[index];
+                doimau();
+            };
 
-            <div class="column">
-                <div class="sanPham">
-                    <div class="Name">
-                        Iphone 14 Pro Max 512GB - New
-                    </div>
-                    <img src="images/a4.jpg" alt="iphone 14 Pro Max" width="200" height="150">
-                    <div class="gia">
-                        <del>39.490.000đ</del> 25.500.000đ
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="sanPham">
-                    <div class="Name">
-                        Iphone 14 Pro Max 512GB - New
-                    </div>
-                    <img src="images/a4.jpg" alt="iphone 14 Pro Max" width="200" height="150">
-                    <div class="gia">
-                        <del>39.490.000đ</del> 25.500.000đ
-                    </div>
-                </div>
-            </div>
+            function next() {
+                index++;
+                if (index == arr_hinh.length) {
+                    index = 0;
+                }
+                document.getElementById("hinh").src = arr_hinh[index];
+                document.getElementById("mota").innerHTML = arr_mota[index];
+                document.getElementById("sotrang").innerHTML = arr_trang[index];
+                doimau();
+            };
+
+            function chuyen(x) {
+                document.getElementById("hinh").src = arr_hinh[x];
+                document.getElementById("mota").innerHTML = arr_mota[x];
+                document.getElementById("sotrang").innerHTML = arr_trang[x];
+                doimau();
+            };
+
+            function doimau() {
+                for (let i = 0; i < arr_hinh.length; i++) {
+                    if (document.getElementById("sotrang").innerHTML == arr_trang[i]) {
+                        document.getElementById(arr_item[i]).style.color = "red";
+                    } else document.getElementById(arr_item[i]).style.color = "rgb(237, 128, 128)";
+                }
+            }
+        </script>
     </article>
     <footer>
-        FPT Polytechnic Da Nang
+        @FPT Polytechnic Da Nang
     </footer>
 </body>
 
