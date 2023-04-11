@@ -42,3 +42,30 @@ function tien() {
     }
     document.getElementById("pic").src = arr_pic[index];
 };
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides() {
+    let j;
+    let slides = document.getElementsByClassName("slider");
+    let dots = document.getElementsByClassName("dot");
+    for (j = 0; j < slides.length; j++) {
+        slides[j].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    for (j = 0; j < dots.length; j++) {
+        dots[j].className = dots[j].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
+}

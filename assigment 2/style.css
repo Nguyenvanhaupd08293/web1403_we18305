@@ -12,34 +12,15 @@
     margin: 0 auto;
 }
 
+.text {
+    font-size: 20px;
+}
+
 .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-}
-
-.text>p {
-    font-size: 14px;
-    color: #000;
-    font-weight: 400;
-}
-
-.languages {
-    padding-right: 10px;
-}
-
-.languages>li {
-    list-style: none;
-    color: #000;
-    font-weight: 400;
-}
-
-.languages>li>a {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
-    color: #999;
 }
 
 .top-bar-right {
@@ -52,7 +33,7 @@
 }
 
 .social-icon a {
-    font-size: 20px;
+    font-size: 30px;
     color: #999;
     padding-left: 5px;
     display: inline-block;
@@ -93,44 +74,8 @@ hr {
     color: #111;
 }
 
-.nav .subnav {
-    display: none;
-    position: absolute;
-}
-
-.nav .subnav>li {
-    list-style: none;
-}
-
-.nav .subnav>li>a {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    color: #999;
-    padding: 0 30px;
-    line-height: 40px;
-}
-
 .nav>li:hover>a {
     color: #cc2121;
-}
-
-.nav li:hover .subnav {
-    display: block;
-    background-color: #fff;
-    border-color: #ddd;
-    box-shadow: #000000 1px 1px 15px 0px;
-    border-radius: 3px;
-    width: 230px;
-    height: 200px;
-    top: 62px;
-    left: 30px;
-    z-index: 1;
-}
-
-.nav .subnav li:hover a {
-    background-color: #ddd;
-    display: block;
 }
 
 .item-icon {
@@ -207,8 +152,8 @@ hr {
 
 .box-slider {
     position: absolute;
-    top: 80px;
-    left: 90px
+    top: 278px;
+    left: 170px
 }
 
 .box-slider h3 {
@@ -640,4 +585,71 @@ td {
     padding: 6px 10px;
     transition: 0.25s ease-in-out;
     margin-top: 30px;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 100px;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dot {
+    top: 5em;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: white;
+}
+
+
+/* Fading animation */
+
+.slider {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
 }
