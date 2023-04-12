@@ -57,21 +57,22 @@ hr {
     border: 1px solid #999;
 }
 
-.title-bar {
+.title-bar,
+#nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 37px 0;
 }
 
-.nav>li {
+#nav>li {
     list-style: none;
     display: inline-block;
     padding: 20px 25px;
     position: relative;
 }
 
-.nav>li>a {
+#nav>li>a {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 12px;
@@ -79,7 +80,7 @@ hr {
     color: #111;
 }
 
-.nav>li:hover>a {
+#nav>li:hover>a {
     color: #cc2121;
 }
 
@@ -118,11 +119,20 @@ hr {
     padding-left: 10px;
 }
 
-.form-search input:last-child {
+.form-search button {
     width: 70px;
     height: 40px;
-    background-color: #000;
+    background-color: #e62121;
+    border: 1px solid #100f0f;
     color: #fff;
+}
+
+.form-search button:hover {
+    width: 70px;
+    height: 40px;
+    background-color: rgb(82, 177, 19);
+    border: 1px solid #100f0f;
+    color: #121111;
 }
 
 .form-search {
@@ -157,8 +167,8 @@ hr {
 
 .box-slider {
     position: absolute;
-    top: 278px;
-    left: 170px
+    top: 341px;
+    left: 204px
 }
 
 .box-slider h3 {
@@ -599,7 +609,7 @@ footer {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 60%;
+    top: 66%;
     width: auto;
     padding: 16px;
     margin-top: -22px;
@@ -614,7 +624,7 @@ footer {
 /* Position the "next button" to the right */
 
 .next {
-    right: 100px;
+    right: 90px;
     border-radius: 3px 0 0 3px;
 }
 

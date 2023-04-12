@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
     <title>Ass</title>
 </head>
 
@@ -36,7 +36,7 @@
             <div class="item-logo">
                 <a href="#"><img src="./img/logo.png" alt="logo"></a>
             </div>
-            <ul class="nav">
+            <ul id="nav">
                 <li><a href="#slideshow">Trang chủ</a></li>
                 <li><a href="#content">Giới thiệu</a></li>
                 <li><a href="#content-buy">Cửa hàng</a></li>
@@ -46,8 +46,8 @@
             <div class="item-icon">
                 <i class="fa fa-search">
                             <form action="" class="form-search">
-                                <input type="text" placeholder="Tìm kiếm">
-                                <input type="submit" value="Tìm">
+                                <input oninput="w3.filterHTML('#nav', 'li', this.value)" placeholder="Tìm kiếm">
+                                <button onclick="">Tìm</button>
                             </form>
                         </i>
                 <a href="#"><i class="fa fa-heart"></i></a>
@@ -55,7 +55,7 @@
             <form action="" class="form-login">
                                 <h1 class="form-heading">Đăng nhập</h1>
                              <div class="form-group">
-                                        <i class="far fa-user"></i>
+                    <i class="far fa-user"></i>
                 <input type="text" class="form-input" placeholder="Tên đăng nhập">
             </div>
             <div class="form-group">
@@ -68,7 +68,7 @@
             <input type="submit" value="Đăng nhập" class="form-submit">
             </form>
             </i>
-            <a href="#"><i class="fas fa-cart-plus"></i></a>
+            <i class="fas fa-cart-plus"></i>
         </div>
         </div>
         <div id="slideshow">
