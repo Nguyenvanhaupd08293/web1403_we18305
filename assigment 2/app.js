@@ -69,3 +69,66 @@ function showSlides() {
     dots[slideIndex - 1].className += " active";
     setTimeout(showSlides, 3000);
 }
+var pic = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    pic++;
+    if (pic > x.length) { pic = 1 }
+    x[pic - 1].style.display = "block";
+    setTimeout(carousel, 7000);
+}
+var pic1 = 0;
+carousel1();
+
+function carousel1() {
+    var j;
+    var x = document.getElementsByClassName("Slides");
+    for (j = 0; j < x.length; j++) {
+        x[j].style.display = "none";
+    }
+    pic1++;
+    if (pic1 > x.length) { pic1 = 1 }
+    x[pic1 - 1].style.display = "block";
+    setTimeout(carousel1, 7000);
+}
+
+function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("nav");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        txtValue = li[i].textContent || li[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+function login() {
+    // Lấy giá trị nhập từ form
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Kiểm tra giá trị nhập vào
+    if (username == "" || password == "") {
+        alert("Vui lòng nhập tên đăng nhập và mật khẩu");
+    } else if (username == "admin" && password == "123456") {
+        alert("Đăng nhập thành công!");
+    } else {
+        alert("Tên đăng nhập hoặc mật khẩu không đúng");
+    }
+}
+
+function addBorder(element) {
+    element.style.border = "3px solid red";
+}

@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./fonts/fontawesome/fontawesome-free-6.3.0-web/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
     <title>Ass</title>
 </head>
 
@@ -46,30 +46,21 @@
             <div class="item-icon">
                 <i class="fa fa-search">
                             <form action="" class="form-search">
-                                <input oninput="w3.filterHTML('#nav', 'li', this.value)" placeholder="Tìm kiếm">
-                                <button onclick="">Tìm</button>
+                                <input  type="text" placeholder="Search.." id="myInput" onkeyup="myFunction()">
                             </form>
                         </i>
                 <a href="#"><i class="fa fa-heart"></i></a>
                 <i class="fa fa-user">
             <form action="" class="form-login">
-                                <h1 class="form-heading">Đăng nhập</h1>
-                             <div class="form-group">
-                    <i class="far fa-user"></i>
-                <input type="text" class="form-input" placeholder="Tên đăng nhập">
-            </div>
-            <div class="form-group">
-                <i class="fas fa-key"></i>
-                <input type="password" class="form-input" placeholder="Mật khẩu">
-                <div id="eye">
-                    <i class="far fa-eye"></i>
-                </div>
-            </div>
-            <input type="submit" value="Đăng nhập" class="form-submit">
+                <label for="username">Tên đăng nhập</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" name="password"> <br>
+                <button type="button" onclick="login()">Đăng nhập</button>
             </form>
             </i>
-            <i class="fas fa-cart-plus"></i>
-        </div>
+                <i class="fas fa-cart-plus"></i>
+            </div>
         </div>
         <div id="slideshow">
             <div class="slider">
@@ -99,19 +90,19 @@
         <div id="content">
             <div class="content-top">
                 <div class="img-top1 c">
-                    <img src="img/img1-top-floda1.jpg" alt="">
+                    <img src="img/img1-top-floda1.jpg" onclick="addBorder(this)" alt="">
                     <h3>Top Friday</h3>
                     <h2>Vàng Gold</h2>
                     <a href="#"><span>Mua Ngay</span></a>
                 </div>
                 <div class="img-top2 c">
-                    <img src="img/img1-top-floda2.jpg" alt="">
+                    <img src="img/img1-top-floda2.jpg" onclick="addBorder(this)">
                     <h3>Black Friday</h3>
                     <h2>Hoa Lan</h2>
                     <a href="#"><span>Mua Ngay</span></a>
                 </div>
                 <div class="img-top3 c">
-                    <img src="img/img1-top-floda3.jpg" alt="">
+                    <img src="img/img1-top-floda3.jpg" onclick="addBorder(this)">
                     <h3>10% Off</h3>
                     <h2>Hoa Tulip</h2>
                     <a href="#"><span>Mua Ngay</span></a>
@@ -158,9 +149,7 @@
                 </div>
                 <div class="row-content">
                     <div class="row-img">
-
-                        <img src="./img/product-1.jpg" alt="">
-
+                        <img src="img/product-1.jpg" onclick="addBorder(this)" alt="">
                         <div class="row-text">
                             <a href="">
                                 <h3>Hyacinth white stick</h3>
@@ -171,7 +160,7 @@
                         </div>
                     </div>
                     <div class="row-img">
-                        <img src="./img/product-2.jpg" alt="">
+                        <img src="./img/product-2.jpg" onclick="addBorder(this)">
 
                         <div class="row-text">
                             <a href="">
@@ -184,7 +173,7 @@
 
                     <div class="row-img">
 
-                        <img src="./img/product-3.jpg" alt="">
+                        <img src="./img/product-3.jpg" onclick="addBorder(this)">
 
                         <div class="row-text">
                             <a href="">
@@ -198,7 +187,7 @@
 
                     <div class="row-img">
 
-                        <img src="./img/product-5.jpg" alt="">
+                        <img src="./img/product-5.jpg" onclick="addBorder(this)">
 
                         <div class="row-text">
                             <a href="">
@@ -213,7 +202,7 @@
                 <div class="row-content">
                     <div class="row-img">
 
-                        <img src="./img/product-1.jpg" alt="">
+                        <img src="./img/product-1.jpg" onclick="addBorder(this)">
                         <div class="row-text">
                             <a href="">
                                 <h3>Hyacinth white stick</h3>
@@ -225,7 +214,7 @@
                     </div>
                     <div class="row-img">
 
-                        <img src="./img/product-2.jpg" alt="">
+                        <img src="./img/product-2.jpg" onclick="addBorder(this)">
 
                         <div class="row-text">
                             <a href="">
@@ -238,7 +227,7 @@
 
                     <div class="row-img">
 
-                        <img src="./img/product-3.jpg" alt="">
+                        <img src="./img/product-3.jpg" onclick="addBorder(this)">
 
                         <div class="row-text">
                             <a href="">
@@ -252,7 +241,7 @@
 
                     <div class="row-img">
 
-                        <img src="./img/product-5.jpg" alt="">
+                        <img src="./img/product-5.jpg" onclick="addBorder(this)">
 
                         <div class="row-text">
                             <a href="">
@@ -299,7 +288,9 @@
                 </div>
                 <div class="box-banner">
                     <div class="row-top-products">
-                        <img src="./img/product-1.jpg" alt="">
+                        <img class="mySlides w3-animate-fading" src="img/product-1.jpg" onclick="addBorder(this)" alt="">
+                        <img class="mySlides w3-animate-fading" src="img/product-2.jpg" onclick="addBorder(this)" alt="">
+                        <img class="mySlides w3-animate-fading" src="img/product-5.jpg" onclick="addBorder(this)" alt="">
                         <div class="row-text-products">
                             <a href="">
                                 <h3>Hyacinth white stick</h3>
@@ -310,7 +301,7 @@
                         </div>
                     </div>
                     <div class="row-top-products">
-                        <img src="./img/product-2.jpg" alt="">
+                        <img src="./img/product-2.jpg" alt="" onclick="addBorder(this)">
                         <div class="row-text-products">
                             <a href="">
                                 <h3>Hyacinth white stick</h3>
@@ -320,7 +311,9 @@
                         </div>
                     </div>
                     <div class="row-top-products">
-                        <img src="./img/product-3.jpg" alt="">
+                        <img class="Slides w3-animate-fading" src="./img/product-3.jpg" alt="">
+                        <img class="Slides w3-animate-fading" src="img/product-1.jpg">
+                        <img class="Slides w3-animate-fading" src="img/product-2.jpg" alt="">
                         <div class="row-text-products">
                             <a href="">
                                 <h3>Hyacinth white stick</h3>
@@ -330,7 +323,7 @@
                         </div>
                     </div>
                     <div class="row-top-products">
-                        <img src="./img/product-5.jpg" alt="">
+                        <img src="./img/product-5.jpg" alt="" onclick="addBorder(this)">
                         <div class="row-text-products">
                             <a href="">
                                 <h3>Hyacinth white stick</h3>
@@ -354,14 +347,15 @@
                                 <td><i class="fa-address-book"></i> </i>
                                 </td>
                                 <td>
-                                    <p>Địa chỉ: Ngư Thủy , Lệ Thủy , Quảng BÌnh</p>
+                                    <p>Địa chỉ:
+                                        <a href="https://www.google.com/maps/place/Li%C3%AAn+B%E1%BA%AFc,+Ng%C6%B0+Thu%CC%89y+Nam,+L%E1%BB%87+Th%E1%BB%A7y+District,+Quang+Binh+Province,+Vietnam/@17.1767972,106.9678746,17.71z/data=!4m6!3m5!1s0x3140c9038e8e8019:0x5424127ddf9e40b7!8m2!3d17.1774832!4d106.9668514!16s%2Fg%2F1tj98gxw">Ngư Thủy , Lệ Thủy , Quảng BÌnh</a></p>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td><i class="fa fa-phone"></i></td>
                                 <td>
-                                    <p>Điện thoại: <a href="">0395807019</a></p>
+                                    <p>Điện thoại: <a href="https://chat.zalo.me/?null">0395807019</a></p>
                                 </td>
                             </tr>
 
@@ -370,7 +364,7 @@
                                     <i class="fa fa-envelope"></i>
                                 </td>
                                 <td>
-                                    <p>Email: <a href="">Hauhau2382004@gmail.com</a></p>
+                                    <p>Email: <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">Hauhau2382004@gmail.com</a></p>
                                 </td>
                             </tr>
                         </table>
