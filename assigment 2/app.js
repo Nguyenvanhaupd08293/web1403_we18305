@@ -69,6 +69,7 @@ function showSlides() {
     dots[slideIndex - 1].className += " active";
     setTimeout(showSlides, 3000);
 }
+//
 var pic = 0;
 carousel();
 
@@ -81,7 +82,7 @@ function carousel() {
     pic++;
     if (pic > x.length) { pic = 1 }
     x[pic - 1].style.display = "block";
-    setTimeout(carousel, 7000);
+    setTimeout(carousel, 5000);
 }
 var pic1 = 0;
 carousel1();
@@ -95,9 +96,9 @@ function carousel1() {
     pic1++;
     if (pic1 > x.length) { pic1 = 1 }
     x[pic1 - 1].style.display = "block";
-    setTimeout(carousel1, 7000);
+    setTimeout(carousel1, 5000);
 }
-
+//
 function myFunction() {
     var input, filter, ul, li, a, i;
     input = document.getElementById("myInput");
@@ -113,7 +114,7 @@ function myFunction() {
         }
     }
 }
-
+//
 function login() {
     // Lấy giá trị nhập từ form
     var username = document.getElementById("username").value;
@@ -128,7 +129,7 @@ function login() {
         alert("Tên đăng nhập hoặc mật khẩu không đúng");
     }
 }
-
+//
 function addBorder(element) {
     element.style.border = "3px solid red";
 }

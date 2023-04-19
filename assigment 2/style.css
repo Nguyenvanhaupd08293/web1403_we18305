@@ -102,7 +102,7 @@ hr {
 
 .form-search {
     position: absolute;
-    background-color: #565151;
+    background-color: #292828;
     width: 344px;
     height: 80px;
     box-shadow: #000000 1px 1px 15px 0px;
@@ -573,9 +573,6 @@ button {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
 }
-
-
-/* Position the "next button" to the right */
 
 .next {
     right: 90px;
